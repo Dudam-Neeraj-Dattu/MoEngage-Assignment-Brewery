@@ -1,0 +1,52 @@
+body {
+    background-color: aliceblue;
+    font-family: Inter, 'Hevetica Neue', Helvetica, apple-system, sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.main {
+    margin: 2rem;
+}
+
+div.check {
+    margin-bottom: 2rem;
+}
+
+div.check h1 {
+    color: darkblue;
+}
+
+div.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+div.search div.input input {
+    width: 20rem;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+div.search div.submit button {
+    width: 10rem;
+    height: 45px;
+    font-family: Inter, 'Hevetica Neue', Helvetica, apple-system, sans-serif;
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+    background-color: rgb(153, 136, 220);
+    color: white;
+    font-size: 1.1rem;
+    
+}
+
+div.search div.input input::placeholder {
+    font-weight: bolder;
+    font-size: 1rem;
+}
