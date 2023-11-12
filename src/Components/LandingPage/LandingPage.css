@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    display: flex;
 }
 
 div.main {
@@ -31,6 +32,9 @@ div.search div.input input {
     border-radius: 10px;
     padding-left: 10px;
     font-size: 1rem;
+    font-weight: bolder;
+    font-size: 1rem;
+    
 }
 
 div.search div.submit button {
@@ -44,9 +48,4 @@ div.search div.submit button {
     color: white;
     font-size: 1.1rem;
     
-}
-
-div.search div.input input::placeholder {
-    font-weight: bolder;
-    font-size: 1rem;
 }

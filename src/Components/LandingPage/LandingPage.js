@@ -10,12 +10,14 @@ const LandingPage = () => {
     // const [movies, setMovies] = useState([]);
 
     let API_URL = 'https://api.openbrewerydb.org/v1/breweries';
+    // let type = 'micro'
 
     const searchMovies = async (title) => {
-
+        
+        var data;
         if (title.length !== 0) {
             const response = await fetch(`${API_URL}?by_city=${title}`);
-            const data = await response.json();
+            data = await response.json();
 
             setbrewname(data);
         }
@@ -28,6 +30,9 @@ const LandingPage = () => {
         //     console.log(Element);
         // });
         // setData(data);
+        if(data.length === 0) {
+            alert('No results found, enter new city');
+        }
     };
 
     // console.log(brewname);
@@ -56,7 +61,8 @@ const LandingPage = () => {
             <br />
             {/* <Link to="/"></Link> */}
             <div className="container">
-                {brewname.map((name) => (
+                {
+                brewname.map((name) => (
                     <BreweryItem data={name} />
                 ))}
             </div>
