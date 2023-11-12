@@ -13,12 +13,13 @@ const LandingPage = () => {
     // let type = 'micro'
 
     const searchMovies = async (title) => {
-        
-        var data;
+
         if (title.length !== 0) {
             const response = await fetch(`${API_URL}?by_city=${title}`);
-            data = await response.json();
-
+            const data = await response.json();
+            if (data.length === 0) {
+                alert('No results found, enter new city');
+            }
             setbrewname(data);
         }
         else {
@@ -30,9 +31,7 @@ const LandingPage = () => {
         //     console.log(Element);
         // });
         // setData(data);
-        if(data.length === 0) {
-            alert('No results found, enter new city');
-        }
+
     };
 
     // console.log(brewname);
@@ -44,6 +43,14 @@ const LandingPage = () => {
             </div>
             <div className="search">
                 {/* Enter City name: */}
+                {/* <div className="options">            
+                    <select name="option" className="names">
+                        <option value="select-option">Select Options</option>
+                        <option value="city">By City</option>
+                        <option value="name">By Name</option>
+                        <option value="type">By type</option>
+                    </select>
+                </div> */}
                 <div className="input">
                     <input
                         type='text'
@@ -55,16 +62,16 @@ const LandingPage = () => {
                 </div>
                 <div className="submit">
                     <button onClick={() => searchMovies(searchTerm)}>search</button>
-                </div>                
+                </div>
             </div>
 
             <br />
             {/* <Link to="/"></Link> */}
             <div className="container">
                 {
-                brewname.map((name) => (
-                    <BreweryItem data={name} />
-                ))}
+                    brewname.map((name) => (
+                        <BreweryItem data={name} />
+                    ))}
             </div>
 
 

@@ -49,3 +49,23 @@ div.search div.submit button {
     font-size: 1.1rem;
     
 }
+
+div.search div.options select {
+    width: 10rem;
+    height: 45px;
+    font-family: Inter, 'Hevetica Neue', Helvetica, apple-system, sans-serif;
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+    background-color: rgb(153, 136, 220);
+    color: white;
+    padding-left: 10px;
+    font-size: 1.1rem;
+}
+
+div.search div.options select.names option {
+    font-size: 1rem;
+    font-weight: bold;
+    /* border: solid red 2px; */
+    /* padding-top: 20px; */
+}
